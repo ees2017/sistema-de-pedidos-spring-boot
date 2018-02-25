@@ -8,6 +8,8 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.util.Collection;
 
+import static java.lang.Math.*;
+
 /**
  * Created by luancomputacao on 24/02/18.
  */
@@ -43,7 +45,11 @@ public class Cliente{
     }
 
     public void setId(Integer id) {
-        this.id = new Integer(id);
+        this.id = id;
+    }
+
+    public void setId(Long id) {
+        this.id = toIntExact(id);
     }
 
     public String getCpf() {
