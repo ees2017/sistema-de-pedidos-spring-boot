@@ -31,4 +31,8 @@
     </c:if>
     </jsp:attribute>
 
+    <jsp:attribute name="jsFooter">
+        <script src="/static/js/clientes.js"></script>
+    </jsp:attribute>
+
 </tp:base>
