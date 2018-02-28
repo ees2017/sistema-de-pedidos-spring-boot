@@ -15,11 +15,14 @@
     <jsp:attribute name="content">
         <c:choose>
             <c:when test="${func:length(clientes) gt 0}">
-                <c:forEach items="${clientes}" var="cliente">
-                    <th scope="row">${cliente.id}</th>
-                    <td>${cliente.cpf}</td>
-                    <td>${cliente.nome}</td>
-                    <td>${cliente.sobrenome}</td>
+                <c:forEach var="cliente" items="${clientes}">
+                    <tr>
+                        <th scope="row">${cliente.id}</th>
+                        <td>${cliente.cpf}</td>
+                        <td>${cliente.nome}</td>
+                        <td>${cliente.sobrenome}</td>
+                        <td><a href="/cliente/${cliente.id}"><span data-feather="edit"></span></a></td>
+                    </tr>
                 </c:forEach>
             </c:when>
             <c:otherwise>

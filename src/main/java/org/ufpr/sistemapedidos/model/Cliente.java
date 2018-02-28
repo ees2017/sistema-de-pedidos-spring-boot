@@ -5,10 +5,8 @@ import org.hibernate.validator.constraints.Length;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
-import javax.validation.constraints.Size;
+import java.io.Serializable;
 import java.util.Collection;
-
-import static java.lang.Math.*;
 
 /**
  * Created by luancomputacao on 24/02/18.
@@ -16,7 +14,7 @@ import static java.lang.Math.*;
 @Entity
 @Table(name = "cliente")
 @EntityListeners(AuditingEntityListener.class)
-public class Cliente{
+public class Cliente implements Serializable{
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -46,10 +44,6 @@ public class Cliente{
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public void setId(Long id) {
-        this.id = toIntExact(id);
     }
 
     public String getCpf() {

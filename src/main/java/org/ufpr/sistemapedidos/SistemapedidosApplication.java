@@ -9,10 +9,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @EnableJpaAuditing
 public class SistemapedidosApplication {
 
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(SistemapedidosApplication.class);
+//    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+//        return application.sources(SistemapedidosApplication.class);
+//    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(SistemapedidosApplication.class, args);
     }
-	public static void main(String[] args) {
-		SpringApplication.run(SistemapedidosApplication.class, args);
-	}
 }

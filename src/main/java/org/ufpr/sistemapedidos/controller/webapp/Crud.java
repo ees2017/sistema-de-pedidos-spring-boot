@@ -13,46 +13,23 @@ import org.ufpr.sistemapedidos.repository.ClienteRepository;
 @Controller
 public class Crud {
 
-    @Autowired
-    ClienteRepository clienteRepository;
+
 
     @GetMapping("/")
     public ModelAndView index() {
-        ModelAndView mv = new ModelAndView("index");
-        return mv;
+        return new ModelAndView("index");
     }
 
-    @GetMapping("/clientes")
-    public ModelAndView clientes() {
-        ModelAndView mv = new ModelAndView("clientes");
-        mv.addObject("clientes", clienteRepository.findAll());
-        return mv;
-    }
 
-    @GetMapping({"/cliente"})
-    public ModelAndView cliente() {
-        ModelAndView mv = new ModelAndView("clientes");
-        mv.addObject("criar", true);
-        return mv;
-    }
-
-    @GetMapping("/cliente/{id}")
-    public ModelAndView cliente(@RequestAttribute(name = "id") Integer clienteID) {
-        ModelAndView mv = new ModelAndView("clientes");
-        mv.addObject("cliente", clienteRepository.findOne(Long.valueOf(clienteID)));
-        return mv;
-    }
 
     @GetMapping("/produtos")
     public ModelAndView produtos() {
-        ModelAndView mav = new ModelAndView("produtos");
-        return mav;
+        return new ModelAndView("produtos");
     }
 
 
     @GetMapping("/itens-do-pedido")
     public ModelAndView itensDoPedido() {
-        ModelAndView mav = new ModelAndView("itens-do-pedido");
-        return mav;
+        return new ModelAndView("itens-do-pedido");
     }
 }

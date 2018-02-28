@@ -41,8 +41,7 @@ public class PedidoPK implements Serializable {
 
         PedidoPK pedidoPK = (PedidoPK) o;
 
-        if (getId() != pedidoPK.getId()) return false;
-        return getIdCliente() == pedidoPK.getIdCliente();
+        return getId() == pedidoPK.getId() && getIdCliente() == pedidoPK.getIdCliente();
     }
 
     @Override

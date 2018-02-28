@@ -14,21 +14,24 @@
 
     <jsp:attribute name="btnToolbar">
         <div class="btn-group mr-2">
-            <a href="/cliente" class="btn btn-sm btn-outline-primary">Adicionar Cliente</a>
+            <c:if test="${clientes != null}">
+                <a href="/cliente" class="btn btn-sm btn-outline-primary">Adicionar Cliente</a>
+            </c:if>
+            <c:if test="${clientes == null}">
+                <a href="/clientes" class="btn btn-sm btn-outline-primary">Listar</a>
+            </c:if>
         </div>
     </jsp:attribute>
 
     <jsp:attribute name="body">
-    <c:if test="${clientes == null}">
-        <jsp:include page="fragments/cliente/formulario.jsp"/>
-    </c:if>
+        <c:if test="${clientes == null}">
+            <jsp:include page="fragments/cliente/formulario.jsp"/>
+        </c:if>
 
 
-    <c:if test="${clientes != null}">
-
+        <c:if test="${clientes != null}">
             <jsp:include page="fragments/cliente/tabela.jsp"/>
-
-    </c:if>
+        </c:if>
     </jsp:attribute>
 
     <jsp:attribute name="jsFooter">
