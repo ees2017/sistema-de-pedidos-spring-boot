@@ -4,13 +4,14 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 
 /**
  * Created by luancomputacao on 24/02/18.
  */
 @Embeddable
-public class ItemDoPedidoPK {
+public class ItemDoPedidoPK implements Serializable{
     @Basic(optional = false)
     @NotBlank
     @Column(name = "id_pedido")
